@@ -18,6 +18,8 @@
         .btn-glow:hover { box-shadow: 0 0 20px rgba(124, 58, 237, 0.6); transform: translateY(-2px); }
         #luma-avatar { animation: bounce 3s infinite; }
         @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        .hidden { display: none; }
+        select option { background: #1a1a1a; color: white; }
     </style>
 </head>
 <body>
@@ -70,14 +72,33 @@
                         <input type="text" id="userName" placeholder="اسمك" class="bg-white/5 border border-white/10 p-4 rounded-xl focus:border-purple-500 outline-none" required>
                         <input type="text" id="projectName" placeholder="اسم المشروع" class="bg-white/5 border border-white/10 p-4 rounded-xl focus:border-purple-500 outline-none" required>
                     </div>
+                    
                     <select id="serviceType" class="w-full bg-black border border-white/10 p-4 rounded-xl focus:border-purple-500 outline-none">
                         <option value="تصميم مواقع">تصميم مواقع</option>
                         <option value="مشاريع برمجية">مشاريع برمجية</option>
                         <option value="واجبات">واجبات مدرسية</option>
                         <option value="متجر">متجر إلكتروني</option>
                     </select>
+
                     <textarea id="projectDesc" rows="4" placeholder="وصف المشروع..." class="w-full bg-white/5 border border-white/10 p-4 rounded-xl focus:border-purple-500 outline-none" required></textarea>
                     
+                    <div class="space-y-4">
+                        <label class="text-sm text-gray-400">طريقة التواصل المفضلة:</label>
+                        <select id="contactPlace" onchange="toggleContactMethods()" class="w-full bg-black border border-white/10 p-4 rounded-xl focus:border-purple-500 outline-none">
+                            <option value="inside">داخل الموقع (دردشة)</option>
+                            <option value="outside">خارج الموقع (منصات التواصل)</option>
+                        </select>
+
+                        <div id="outsideMethods" class="hidden animate-fade-in">
+                            <select id="platformType" class="w-full bg-black border border-white/10 p-4 rounded-xl focus:border-purple-500 outline-none">
+                                <option value="WhatsApp">WhatsApp</option>
+                                <option value="Instagram">Instagram</option>
+                                <option value="Telegram">Telegram</option>
+                                <option value="Snapchat">Snapchat</option>
+                            </select>
+                        </div>
+                    </div>
+
                     <div class="p-4 border border-dashed border-gray-600 rounded-xl bg-purple-500/5">
                         <p class="text-xs text-gray-400">طرق الدفع: تحويل بنكي 💸 | STC Pay 📱</p>
                     </div>
@@ -90,13 +111,16 @@
 
     <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end space-y-4">
         <div class="flex flex-col space-y-2 mb-4">
-            <a href="https://wa.me/966574360046" class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition"><i class="fab fa-whatsapp text-2xl"></i></a>
-            <a href="https://www.instagram.com/lmshlnsh" class="w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition"><i class="fab fa-instagram text-2xl"></i></a>
+            <a href="https://wa.me/966574360046" target="_blank" class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition"><i class="fab fa-whatsapp text-2xl text-white"></i></a>
+            <a href="https://www.snapchat.com/add/qv.050" target="_blank" class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition"><i class="fab fa-snapchat text-2xl text-black"></i></a>
+            <a href="https://www.instagram.com/lmshlnsh" target="_blank" class="w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition"><i class="fab fa-instagram text-2xl text-white"></i></a>
         </div>
         <div id="luma-container" class="relative group cursor-pointer">
-            <div class="absolute right-16 bottom-2 w-48 glass p-3 text-xs opacity-0 group-hover:opacity-100 transition-all">أهلاً فيك 🌸 أنا "لُمّى".. اكتب طلبك، وأنا أوصله مباشرة! 🚀</div>
+            <div class="absolute right-16 bottom-2 w-48 glass p-3 text-xs opacity-0 group-hover:opacity-100 transition-all text-white">
+                أهلاً فيك 🌸 أنا "لُمّى" مساعدتك في موقع لمسه ✨ اكتب طلبك، وأنا أوصّله مباشرة! 🚀
+            </div>
             <div id="luma-avatar" class="w-16 h-16 bg-gradient-to-tr from-purple-600 to-blue-500 rounded-full flex items-center justify-center shadow-2xl border-2 border-white/20">
-                <img src="https://cdn-icons-png.flaticon.com/512/6819/6819644.png" class="w-10 h-10">
+                <img src="https://cdn-icons-png.flaticon.com/512/6819/6819644.png" class="w-10 h-10" alt="Luma">
             </div>
         </div>
     </div>
@@ -107,8 +131,8 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-app.js";
-        import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-auth.js";
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
         const firebaseConfig = {
             apiKey: "AIzaSyAlM3VReeyyQNSGpe5uGuVbKWAXxal9OiE",
@@ -137,7 +161,13 @@
 
         window.loginWithGoogle = async () => {
             try { await signInWithPopup(auth, provider); } 
-            catch (e) { alert("حدث خطأ في الدخول"); }
+            catch (e) { console.error("Login Error", e); }
+        };
+
+        window.toggleContactMethods = () => {
+            const val = document.getElementById('contactPlace').value;
+            const box = document.getElementById('outsideMethods');
+            val === 'outside' ? box.classList.remove('hidden') : box.classList.add('hidden');
         };
 
         document.getElementById('mainRequestForm').onsubmit = async (e) => {
@@ -146,7 +176,9 @@
             btn.disabled = true;
             btn.innerText = "جاري الإرسال...";
 
-            const msg = `📥 طلب جديد - لمسه\n👤 الاسم: ${document.getElementById('userName').value}\n📁 المشروع: ${document.getElementById('projectName').value}\n🎯 الخدمة: ${document.getElementById('serviceType').value}\n📝 الوصف: ${document.getElementById('projectDesc').value}\n📧 العميل: ${auth.currentUser.email}`;
+            const contactWay = document.getElementById('contactPlace').value === 'inside' ? "داخل الموقع (دردشة)" : `خارج الموقع (${document.getElementById('platformType').value})`;
+
+            const msg = `📥 طلب جديد - لمسه\n👤 الاسم: ${document.getElementById('userName').value}\n📁 المشروع: ${document.getElementById('projectName').value}\n🎯 الخدمة: ${document.getElementById('serviceType').value}\n📝 الوصف: ${document.getElementById('projectDesc').value}\n📞 التواصل: ${contactWay}\n📧 العميل: ${auth.currentUser.email}`;
 
             try {
                 await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
