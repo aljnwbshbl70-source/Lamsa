@@ -18,37 +18,69 @@
         .btn-glow:hover { box-shadow: 0 0 20px rgba(124, 58, 237, 0.6); transform: translateY(-2px); }
         #luma-avatar { animation: bounce 3s infinite; }
         @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-        .hidden { display: none; }
+        .service-card:hover { border-color: var(--primary); transform: translateY(-5px); }
         select option { background: #1a1a1a; color: white; }
     </style>
 </head>
 <body>
 
-    <section class="relative min-h-screen flex items-center justify-center p-6 hero-gradient">
-        <div class="text-center" data-aos="zoom-in">
+    <section class="relative min-h-screen flex items-center justify-center p-6 hero-gradient text-center">
+        <div data-aos="zoom-in">
             <h1 class="text-6xl md:text-8xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500">لمسه</h1>
-            <p class="text-xl md:text-2xl text-gray-300 mb-8 font-light">حوّل فكرتك إلى مشروع حقيقي ✨</p>
-            <a href="#order-form" class="bg-purple-600 hover:bg-purple-700 text-white px-10 py-4 rounded-full text-lg font-bold transition-all btn-glow">ابدأ مشروعك الآن</a>
+            <p class="text-xl md:text-2xl text-gray-300 mb-4 font-light">مرحباً بك في عالم الإبداع الرقمي ✨</p>
+            <p class="max-w-2xl mx-auto text-gray-400 mb-8 leading-relaxed">
+                في "لمسه"، نحول أفكارك المعقدة إلى واقع برمجّي ملموس. سواء كنت تبحث عن متجر إلكتروني، موقع شخصي، أو حتى حلول لمشاريعك الدراسية، نحن هنا لنضع لمستنا الخاصة.
+            </p>
+            <a href="#services" class="bg-purple-600 hover:bg-purple-700 text-white px-10 py-4 rounded-full text-lg font-bold transition-all btn-glow inline-block">اكتشف خدماتنا</a>
         </div>
     </section>
 
-    <section class="py-20 px-6 max-w-6xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div class="glass p-8 text-center hover:border-purple-500 transition-all" data-aos="fade-up">
-                <i class="fas fa-code text-4xl text-purple-500 mb-4"></i>
-                <h3 class="text-xl font-bold mb-2">تصميم مواقع</h3>
+    <section id="services" class="py-20 px-6 max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">🎯 ماذا يمكنك طلبه؟</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="glass p-8 service-card transition-all" data-aos="fade-up">
+                <i class="fas fa-code text-3xl text-purple-500 mb-4"></i>
+                <h3 class="text-xl font-bold mb-4">💻 البرمجة</h3>
+                <ul class="text-sm text-gray-400 space-y-2">
+                    <li>• مواقع شخصية وشركات</li>
+                    <li>• صفحات هبوط (Landing Pages)</li>
+                    <li>• أنظمة حجز وتفاعل</li>
+                    <li>• مواقع تعليمية مطورة</li>
+                </ul>
             </div>
-            <div class="glass p-8 text-center hover:border-blue-500 transition-all" data-aos="fade-up" data-aos-delay="100">
-                <i class="fas fa-laptop-code text-4xl text-blue-500 mb-4"></i>
-                <h3 class="text-xl font-bold mb-2">مشاريع برمجية</h3>
+
+            <div class="glass p-8 service-card transition-all" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-shopping-cart text-3xl text-blue-500 mb-4"></i>
+                <h3 class="text-xl font-bold mb-4">🛒 متاجر إلكترونية</h3>
+                <ul class="text-sm text-gray-400 space-y-2">
+                    <li>• إنشاء متجر كامل</li>
+                    <li>• ربط بوابات الدفع</li>
+                    <li>• تحسين تجربة المستخدم</li>
+                    <li>• تصميم واجهات احترافية</li>
+                </ul>
             </div>
-            <div class="glass p-8 text-center hover:border-purple-500 transition-all" data-aos="fade-up" data-aos-delay="200">
-                <i class="fas fa-book text-4xl text-purple-500 mb-4"></i>
-                <h3 class="text-xl font-bold mb-2">واجبات مدرسية</h3>
+
+            <div class="glass p-8 service-card transition-all" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-graduation-cap text-3xl text-purple-500 mb-4"></i>
+                <h3 class="text-xl font-bold mb-4">📱 مشاريع خاصة</h3>
+                <ul class="text-sm text-gray-400 space-y-2">
+                    <li>• مشاريع مدرسية (ثانوي/جامعي)</li>
+                    <li>• عروض تقديمية (PPT)</li>
+                    <li>• أفكار برمجية جاهزة</li>
+                    <li>• مواقع تعليمية مبسطة</li>
+                </ul>
             </div>
-            <div class="glass p-8 text-center hover:border-blue-500 transition-all" data-aos="fade-up" data-aos-delay="300">
-                <i class="fas fa-shopping-cart text-4xl text-blue-500 mb-4"></i>
-                <h3 class="text-xl font-bold mb-2">متاجر إلكترونية</h3>
+
+            <div class="glass p-8 service-card transition-all" data-aos="fade-up" data-aos-delay="300">
+                <i class="fas fa-paint-brush text-3xl text-blue-500 mb-4"></i>
+                <h3 class="text-xl font-bold mb-4">🎨 خدمات إضافية</h3>
+                <ul class="text-sm text-gray-400 space-y-2">
+                    <li>• تصميم UI/UX</li>
+                    <li>• تحسين المواقع الحالية</li>
+                    <li>• تعديل أكواد وإصلاح أخطاء</li>
+                    <li>• تطوير مشاريع قائمة</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -56,7 +88,7 @@
     <section id="order-form" class="py-20 px-6 max-w-4xl mx-auto">
         <div class="glass p-8 md:p-12">
             <div id="auth-section" class="text-center mb-8">
-                <p class="mb-4 text-gray-400">سجل دخولك أولاً لطلب الخدمة والدردشة مع لُمّى 🌸</p>
+                <p class="mb-4 text-gray-400">سجل دخولك أولاً لتتمكن من إرسال طلبك ومناقشته مع لُمّى 🌸</p>
                 <button onclick="loginWithGoogle()" class="bg-white text-black px-6 py-3 rounded-xl font-bold flex items-center mx-auto hover:bg-gray-200 transition">
                     <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/pwa/google.svg" class="w-5 h-5 ml-2">
                     الدخول بواسطة Google
@@ -65,68 +97,56 @@
 
             <div id="form-content" class="hidden">
                 <h2 class="text-2xl font-bold mb-8 flex items-center text-purple-400">
-                    <i class="fas fa-file-signature ml-3"></i> اطلب مشروعك
+                    <i class="fas fa-paper-plane ml-3"></i> اطلب مشروعك الآن
                 </h2>
                 <form id="mainRequestForm" class="space-y-6">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <input type="text" id="userName" placeholder="اسمك" class="bg-white/5 border border-white/10 p-4 rounded-xl focus:border-purple-500 outline-none" required>
-                        <input type="text" id="projectName" placeholder="اسم المشروع" class="bg-white/5 border border-white/10 p-4 rounded-xl focus:border-purple-500 outline-none" required>
+                        <input type="text" id="userName" placeholder="اسمك الكريم" class="bg-white/5 border border-white/10 p-4 rounded-xl outline-none focus:border-purple-500" required>
+                        <input type="text" id="projectName" placeholder="اسم المشروع المتوقع" class="bg-white/5 border border-white/10 p-4 rounded-xl outline-none focus:border-purple-500" required>
                     </div>
                     
-                    <select id="serviceType" class="w-full bg-black border border-white/10 p-4 rounded-xl focus:border-purple-500 outline-none">
-                        <option value="تصميم مواقع">تصميم مواقع</option>
-                        <option value="مشاريع برمجية">مشاريع برمجية</option>
-                        <option value="واجبات">واجبات مدرسية</option>
-                        <option value="متجر">متجر إلكتروني</option>
+                    <select id="serviceType" class="w-full bg-black border border-white/10 p-4 rounded-xl outline-none focus:border-purple-500">
+                        <option value="برمجة موقع">💻 خدمات البرمجة</option>
+                        <option value="متجر إلكتروني">🛒 متجر إلكتروني</option>
+                        <option value="مشروع مدرسي">📱 مشاريع خاصة / مدرسية</option>
+                        <option value="تصميم وتعديل">🎨 تصميم UI/UX وتعديل</option>
                     </select>
 
-                    <textarea id="projectDesc" rows="4" placeholder="وصف المشروع..." class="w-full bg-white/5 border border-white/10 p-4 rounded-xl focus:border-purple-500 outline-none" required></textarea>
+                    <textarea id="projectDesc" rows="4" placeholder="اشرح لنا فكرتك بالتفصيل... (نحن نسمعك)" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl outline-none focus:border-purple-500" required></textarea>
                     
                     <div class="space-y-4">
-                        <label class="text-sm text-gray-400">طريقة التواصل المفضلة:</label>
-                        <select id="contactPlace" onchange="toggleContactMethods()" class="w-full bg-black border border-white/10 p-4 rounded-xl focus:border-purple-500 outline-none">
-                            <option value="inside">داخل الموقع (دردشة)</option>
-                            <option value="outside">خارج الموقع (منصات التواصل)</option>
-                        </select>
-
-                        <div id="outsideMethods" class="hidden animate-fade-in">
-                            <select id="platformType" class="w-full bg-black border border-white/10 p-4 rounded-xl focus:border-purple-500 outline-none">
+                        <label class="text-sm text-gray-400">طريقة التواصل خارج الموقع عبر:</label>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <select id="platformType" onchange="updateContactPlaceholder()" class="bg-black border border-white/10 p-4 rounded-xl outline-none focus:border-purple-500">
                                 <option value="WhatsApp">WhatsApp</option>
                                 <option value="Instagram">Instagram</option>
                                 <option value="Telegram">Telegram</option>
                                 <option value="Snapchat">Snapchat</option>
                             </select>
+                            <input type="text" id="userContactHandle" placeholder="رقمك يا غالي (واتساب)" class="bg-white/5 border border-white/10 p-4 rounded-xl outline-none focus:border-purple-500" required>
                         </div>
                     </div>
 
-                    <div class="p-4 border border-dashed border-gray-600 rounded-xl bg-purple-500/5">
-                        <p class="text-xs text-gray-400">طرق الدفع: تحويل بنكي 💸 | STC Pay 📱</p>
-                    </div>
-
-                    <button type="submit" class="w-full bg-gradient-to-r from-purple-600 to-blue-600 py-4 rounded-xl font-bold text-lg btn-glow">إرسال الطلب 🚀</button>
+                    <button type="submit" class="w-full bg-gradient-to-r from-purple-600 to-blue-600 py-4 rounded-xl font-bold text-lg btn-glow">إرسال الطلب إلى لُمّى 🚀</button>
                 </form>
             </div>
         </div>
     </section>
 
     <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end space-y-4">
-        <div class="flex flex-col space-y-2 mb-4">
-            <a href="https://wa.me/966574360046" target="_blank" class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition"><i class="fab fa-whatsapp text-2xl text-white"></i></a>
-            <a href="https://www.snapchat.com/add/qv.050" target="_blank" class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition"><i class="fab fa-snapchat text-2xl text-black"></i></a>
-            <a href="https://www.instagram.com/lmshlnsh" target="_blank" class="w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition"><i class="fab fa-instagram text-2xl text-white"></i></a>
-        </div>
         <div id="luma-container" class="relative group cursor-pointer">
             <div class="absolute right-16 bottom-2 w-48 glass p-3 text-xs opacity-0 group-hover:opacity-100 transition-all text-white">
-                أهلاً فيك 🌸 أنا "لُمّى" مساعدتك في موقع لمسه ✨ اكتب طلبك، وأنا أوصّله مباشرة! 🚀
+                أهلاً بك 🌸 أنا "لُمّى".. سأقوم بإيصال طلبك للمطور فوراً! ✨
             </div>
             <div id="luma-avatar" class="w-16 h-16 bg-gradient-to-tr from-purple-600 to-blue-500 rounded-full flex items-center justify-center shadow-2xl border-2 border-white/20">
-                <img src="https://cdn-icons-png.flaticon.com/512/6819/6819644.png" class="w-10 h-10" alt="Luma">
+                <img src="https://cdn-icons-png.flaticon.com/512/6819/6819644.png" class="w-10 h-10">
             </div>
         </div>
     </div>
 
     <footer class="py-10 border-t border-gray-800 text-center text-gray-500 text-sm">
-        <p>&copy; 2026 لمسه | جميع الحقوق محفوظة لـ <span class="text-purple-500">الـمـطـور الـصـغـيـر</span></p>
+        <p>&copy; 2026 لمسه | حوّل فكرتك إلى حقيقة</p>
+        <p class="mt-2 text-purple-500 font-bold">بواسطة الـمـطـور الـصـغـيـر</p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -146,7 +166,7 @@
         const app = initializeApp(firebaseConfig);
         const auth = getAuth();
         const provider = new GoogleAuthProvider();
-
+        
         const BOT_TOKEN = "8707681218:AAHZAgTBdz1Ob_pyOZcNBeKM2QVdy-e6e3I";
         const CHAT_ID = "7061804635";
 
@@ -160,25 +180,25 @@
         });
 
         window.loginWithGoogle = async () => {
-            try { await signInWithPopup(auth, provider); } 
-            catch (e) { console.error("Login Error", e); }
+            try { await signInWithPopup(auth, provider); } catch (e) { console.error(e); }
         };
 
-        window.toggleContactMethods = () => {
-            const val = document.getElementById('contactPlace').value;
-            const box = document.getElementById('outsideMethods');
-            val === 'outside' ? box.classList.remove('hidden') : box.classList.add('hidden');
+        window.updateContactPlaceholder = () => {
+            const p = document.getElementById('platformType').value;
+            const i = document.getElementById('userContactHandle');
+            if(p === 'WhatsApp') i.placeholder = "رقمك يا غالي (واتساب)";
+            else if(p === 'Instagram') i.placeholder = "يوزرك يا غالي (انستا)";
+            else if(p === 'Telegram') i.placeholder = "رقمك أو يوزرك (تليجرام)";
+            else i.placeholder = "يوزرك يا غالي (سناب)";
         };
 
         document.getElementById('mainRequestForm').onsubmit = async (e) => {
             e.preventDefault();
             const btn = e.target.querySelector('button');
-            btn.disabled = true;
-            btn.innerText = "جاري الإرسال...";
+            btn.disabled = true; btn.innerText = "جاري الإرسال...";
 
-            const contactWay = document.getElementById('contactPlace').value === 'inside' ? "داخل الموقع (دردشة)" : `خارج الموقع (${document.getElementById('platformType').value})`;
-
-            const msg = `📥 طلب جديد - لمسه\n👤 الاسم: ${document.getElementById('userName').value}\n📁 المشروع: ${document.getElementById('projectName').value}\n🎯 الخدمة: ${document.getElementById('serviceType').value}\n📝 الوصف: ${document.getElementById('projectDesc').value}\n📞 التواصل: ${contactWay}\n📧 العميل: ${auth.currentUser.email}`;
+            const contactInfo = `${document.getElementById('platformType').value}: ${document.getElementById('userContactHandle').value}`;
+            const msg = `📥 طلب جديد - لمسه\n👤 العميل: ${document.getElementById('userName').value}\n📁 المشروع: ${document.getElementById('projectName').value}\n🎯 الخدمة: ${document.getElementById('serviceType').value}\n📝 الوصف: ${document.getElementById('projectDesc').value}\n📞 التواصل: ${contactInfo}\n📧 الإيميل: ${auth.currentUser.email}`;
 
             try {
                 await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
@@ -186,10 +206,10 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ chat_id: CHAT_ID, text: msg })
                 });
-                alert("تم إرسال طلبك بنجاح! لُمّى أوصلت رسالتك 🚀");
+                alert("تم الإرسال! لُمّى أوصلت رسالتك للمطور بنجاح 🚀");
                 e.target.reset();
-            } catch { alert("فشل الإرسال"); } 
-            finally { btn.disabled = false; btn.innerText = "إرسال الطلب 🚀"; }
+            } catch { alert("خطأ في الإرسال"); }
+            finally { btn.disabled = false; btn.innerText = "إرسال الطلب إلى لُمّى 🚀"; }
         };
     </script>
 </body>
